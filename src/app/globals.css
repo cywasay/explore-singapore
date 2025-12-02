@@ -1,8 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: var(--font-comfortaa);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --BG-Primary: #151515;
@@ -12,4 +10,13 @@ body {
   font-family: var(--font-comfortaa), sans-serif;
   background: var(--BG-Primary);
   color: white;
+}
+
+.card-clip {
+  clip-path: path("M0 0 H100% V100% H0 Z");
+  transition: clip-path 0.5s ease;
+}
+
+.group:hover .card-clip {
+  clip-path: path("M0 0 H100% V70% C100% 100%, 70% 100%, 58% 100% H0 Z");
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export default function EventCard({ title, description, imageUrl }) {
@@ -9,7 +11,8 @@ export default function EventCard({ title, description, imageUrl }) {
             rounded-[16px] card-clip"
         >
 
-            {/* REAL WORKING CLIP-PATH ANIMATION */}
+            {/* CLIP-PATH ANIMATION - Temporarily removed for debugging */}
+            {/* 
             <style jsx>{`
                 .card-clip {
                     clip-path: path(
@@ -22,7 +25,8 @@ export default function EventCard({ title, description, imageUrl }) {
                         "M0 0 H100% V70% C100% 100%, 70% 100%, 58% 100% H0 Z"
                     );
                 }
-            `}</style>
+            `}</style> 
+            */}
 
             {/* IMAGE */}
             <div className="w-full h-[48%] overflow-hidden relative">
