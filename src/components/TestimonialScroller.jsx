@@ -165,7 +165,7 @@ export default function TestimonialScroller() {
                                     src={testimonial.avatar}
                                     alt={testimonial.name}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover rounded-full"
                                 />
                             </div>
                         );

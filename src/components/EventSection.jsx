@@ -81,43 +81,61 @@ export default function EventSection() {
                 </div>
 
                 {/* Mobile Carousel */}
-                <div className="md:hidden flex items-center justify-center gap-3">
-                    {/* Left Arrow */}
-                    <button
-                        onClick={prevEvent}
-                        className="w-10 h-10 rounded-full border border-gray-600 bg-[#1a1a1a] flex items-center justify-center text-gray-400 hover:border-[#D4A373] hover:text-white active:border-[#D4A373] active:text-white transition-all duration-300 active:scale-95 flex-shrink-0"
-                        aria-label="Previous event"
-                    >
-                        <svg
-                            className="w-5 h-5 stroke-current"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2}
+                <div className="md:hidden">
+                    {/* Cards Container with Peek Effect */}
+                    <div className="overflow-hidden -mx-6 px-6">
+                        <div
+                            className="flex gap-4 transition-transform duration-300"
+                            style={{
+                                transform: `translateX(-${currentIndex * (100 / 1.5)}%)`
+                            }}
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-
-                    {/* Card */}
-                    <div className="transition-all duration-300 transform">
-                        <EventCard {...events[currentIndex]} />
+                            {events.map((event, index) => (
+                                <div
+                                    key={index}
+                                    className="flex-shrink-0"
+                                    style={{ width: 'calc(66.666% - 10.67px)' }}
+                                >
+                                    <EventCard {...event} />
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Right Arrow */}
-                    <button
-                        onClick={nextEvent}
-                        className="w-10 h-10 rounded-full bg-[#D4A373] flex items-center justify-center text-white hover:bg-[#c4925e] active:bg-[#c4925e] transition-all duration-300 active:scale-95 flex-shrink-0 shadow-lg shadow-[#D4A373]/20"
-                        aria-label="Next event"
-                    >
-                        <svg
-                            className="w-5 h-5 stroke-current"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2}
+                    {/* Navigation Arrows - Below Cards */}
+                    <div className="flex items-center justify-center gap-3 mt-8">
+                        {/* Left Arrow */}
+                        <button
+                            onClick={prevEvent}
+                            className="w-12 h-12 rounded-full border border-gray-600 bg-[#1a1a1a] flex items-center justify-center text-gray-400 hover:border-[#D4A373] hover:text-white active:border-[#D4A373] active:text-white transition-all duration-300 active:scale-95"
+                            aria-label="Previous event"
                         >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+                            <svg
+                                className="w-5 h-5 stroke-current"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2}
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        {/* Right Arrow */}
+                        <button
+                            onClick={nextEvent}
+                            className="w-12 h-12 rounded-full bg-[#D4A373] flex items-center justify-center text-white hover:bg-[#c4925e] active:bg-[#c4925e] transition-all duration-300 active:scale-95 shadow-lg shadow-[#D4A373]/20"
+                            aria-label="Next event"
+                        >
+                            <svg
+                                className="w-5 h-5 stroke-current"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={2}
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
