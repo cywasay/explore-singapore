@@ -9,28 +9,24 @@ export default function Footer() {
                     <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_auto] gap-8 md:gap-24">
                         {/* Left Column - Brand & Info */}
                         <div className="space-y-6 md:space-y-8">
-                            {/* Logo - Text on mobile, Image on desktop */}
-                            <div className="flex items-center gap-2">
-                                <span className="text-2xl md:hidden">✈️</span>
-                                <h2 className="text-white text-xl md:hidden">
-                                    Explore <span className="font-bold">Singapore</span>
-                                </h2>
+                            {/* Logo */}
+                            <div className="flex items-center">
                                 <Image
                                     src="/logo.png"
                                     alt="Explore Singapore"
-                                    width={240}
-                                    height={40}
-                                    className="hidden md:block object-contain"
+                                    width={285}
+                                    height={45}
+                                    className="object-contain w-[204px] md:w-[285px] h-auto"
                                 />
                             </div>
 
                             {/* Description */}
-                            <p className="text-gray-400 text-sm leading-relaxed max-w-[700px]">
+                            <p className="text-sm leading-relaxed max-w-[700px]" style={{ color: '#D3D3D3' }}>
                                 Explore Singapore offers unforgettable travel experiences with expertly guided tours, seamless transfers, & comfortable accommodations.
                             </p>
 
                             {/* Contact Info - Vertical list */}
-                            <ul className="space-y-2 text-gray-400 text-sm">
+                            <ul className="space-y-2 text-sm" style={{ color: '#D3D3D3' }}>
                                 <li className="flex items-start gap-2">
                                     <span className="mt-1">•</span>
                                     <a href="mailto:marketing@exploresingapore.ai" className="hover:text-[#CC9955] transition-colors">
@@ -112,7 +108,7 @@ export default function Footer() {
                             <div className="space-y-4 md:space-y-6">
                                 {/* Mobile: Heading with corner dots */}
                                 <div className="md:hidden relative inline-block">
-                                    <h3 className="text-white text-base font-medium px-2 py-1">Services</h3>
+                                    <h3 className="text-base font-medium px-2 py-1" style={{ color: '#D3D3D3' }}>Services</h3>
                                     {/* Corner dots */}
                                     <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-white rounded-full" />
                                     <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-white rounded-full" />
@@ -122,7 +118,7 @@ export default function Footer() {
 
                                 {/* Desktop: Heading with frame background */}
                                 <h3
-                                    className="hidden md:flex text-white text-lg font-medium items-center justify-center relative"
+                                    className="hidden md:flex text-lg font-medium items-center justify-center relative"
                                     style={{
                                         backgroundImage: 'url(/heading-frame.png)',
                                         backgroundSize: '100% 100%',
@@ -132,6 +128,7 @@ export default function Footer() {
                                         width: 'fit-content',
                                         opacity: 1,
                                         filter: 'brightness(1.2)',
+                                        color: '#D3D3D3'
                                     }}
                                 >
                                     Services
@@ -139,17 +136,17 @@ export default function Footer() {
 
                                 <ul className="space-y-3 md:space-y-4">
                                     <li>
-                                        <a href="#" className="text-gray-300 text-sm md:text-base hover:text-[#CC9955] transition-colors">
+                                        <a href="#" className="text-sm md:text-base hover:text-[#CC9955] transition-colors" style={{ color: '#D3D3D3' }}>
                                             Day Tours
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className="text-gray-300 text-sm md:text-base hover:text-[#CC9955] transition-colors">
+                                        <a href="#" className="text-sm md:text-base hover:text-[#CC9955] transition-colors" style={{ color: '#D3D3D3' }}>
                                             Package Tours
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className="text-gray-300 text-sm md:text-base hover:text-[#CC9955] transition-colors">
+                                        <a href="#" className="text-sm md:text-base hover:text-[#CC9955] transition-colors" style={{ color: '#D3D3D3' }}>
                                             Transfers
                                         </a>
                                     </li>
@@ -160,7 +157,7 @@ export default function Footer() {
                             <div className="space-y-4 md:space-y-6">
                                 {/* Mobile: Heading with corner dots */}
                                 <div className="md:hidden relative inline-block">
-                                    <h3 className="text-white text-base font-medium px-2 py-1">Company</h3>
+                                    <h3 className="text-base font-medium px-2 py-1" style={{ color: '#D3D3D3' }}>Company</h3>
                                     {/* Corner dots */}
                                     <div className="absolute -top-1 -left-1 w-1.5 h-1.5 bg-white rounded-full" />
                                     <div className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-white rounded-full" />
@@ -170,7 +167,7 @@ export default function Footer() {
 
                                 {/* Desktop: Heading with frame background */}
                                 <h3
-                                    className="hidden md:flex text-white text-lg font-medium items-center justify-center relative"
+                                    className="hidden md:flex text-lg font-medium items-center justify-center relative"
                                     style={{
                                         backgroundImage: 'url(/heading-frame.png)',
                                         backgroundSize: '100% 100%',
@@ -180,6 +177,7 @@ export default function Footer() {
                                         width: 'fit-content',
                                         opacity: 1,
                                         filter: 'brightness(1.2)',
+                                        color: '#D3D3D3'
                                     }}
                                 >
                                     Company
@@ -187,12 +185,12 @@ export default function Footer() {
 
                                 <ul className="space-y-3 md:space-y-4">
                                     <li>
-                                        <a href="#" className="text-gray-300 text-sm md:text-base hover:text-[#CC9955] transition-colors">
+                                        <a href="#" className="text-sm md:text-base hover:text-[#CC9955] transition-colors" style={{ color: '#D3D3D3' }}>
                                             Contact
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className="text-gray-300 text-sm md:text-base hover:text-[#CC9955] transition-colors">
+                                        <a href="#" className="text-sm md:text-base hover:text-[#CC9955] transition-colors" style={{ color: '#D3D3D3' }}>
                                             Privacy Policy
                                         </a>
                                     </li>
@@ -206,7 +204,7 @@ export default function Footer() {
             {/* Bottom Footer */}
             <div className="border-t border-dashed border-gray-700 py-4 md:py-6">
                 <div className="max-w-[1400px] mx-auto px-4 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
-                    <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm order-2 md:order-1">
+                    <div className="flex items-center gap-4 text-xs md:text-sm order-2 md:order-1" style={{ color: '#D3D3D3' }}>
                         <a href="#" className="hover:text-[#CC9955] transition-colors">
                             Privacy Policy
                         </a>
@@ -273,7 +271,7 @@ export default function Footer() {
                     </div>
 
                     {/* Copyright - Hidden on mobile */}
-                    <div className="hidden md:block text-gray-400 text-sm order-3">
+                    <div className="hidden md:block text-sm order-3" style={{ color: '#D3D3D3' }}>
                         Copyright © Exploresingapore All right Reserved 2025
                     </div>
                 </div>
