@@ -87,64 +87,93 @@ export default function HeroSection() {
             </section>
 
             {/* Desktop Hero Section */}
-            <section className="hidden md:flex relative z-10 pt-28 pb-12 px-6 md:px-16 min-h-screen md:h-[calc(100vh-80px)] items-center">
-                <div className="max-w-[1400px] mx-auto w-full flex flex-col md:grid md:grid-cols-2 gap-2 md:gap-16 items-center">
+            <section className="hidden md:flex relative z-10 pt-28 pb-12 min-h-screen items-center overflow-hidden">
+                {/* Background Singapore Text */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
+                    <Image
+                        src="/singapore-text-bg.png"
+                        alt=""
+                        width={1000}
+                        height={400}
+                        className="object-contain opacity-25"
+                        style={{ filter: 'brightness(1.3)' }}
+                    />
+                    {/* Gradient Ellipse Overlay */}
+                    <div
+                        className="absolute inset-0 -translate-x-1/4"
+                        style={{
+                            background: 'radial-gradient(ellipse 1000px 700px at center, rgba(21, 21, 21, 0.4) 0%, transparent 60%)',
+                        }}
+                    />
+                </div>
+
+                <div className="max-w-[1400px] mx-auto w-full grid grid-cols-2 gap-8 items-center px-4 md:px-16 relative z-10">
 
                     {/* Left Content */}
-                    <div className="space-y-6 md:pl-4 flex flex-col items-center md:items-start text-center md:text-left w-full">
-                        <div className="w-full max-w-[800px]">
-                            <h1
-                                className="font-bold text-4xl md:text-[60.76px] leading-tight md:leading-[72.16px] tracking-tight md:tracking-[-0.53px]"
-                            >
-                                <span className="text-white">Experience </span>
-                                <span
-                                    className="inline-block relative text-[#CC9955] px-4 py-2 md:px-[18px] md:py-[9px] mx-2 md:mx-[11.55px]"
-                                    style={{
-                                        backgroundImage: 'url(/singapore-frame.png)',
-                                        backgroundSize: '100% 100%',
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundPosition: 'center',
-                                    }}
-                                >
-                                    Singapore
-                                </span>
-                                <br className="hidden md:block" />
-                                <span className="text-white">With Confidence!</span>
+                    <div className="relative">
+                        {/* Sparkle Decorations */}
+                        <Image
+                            src="/sparkle.png"
+                            alt=""
+                            width={50}
+                            height={50}
+                            className="absolute w-[50px] h-[50px] -z-10"
+                            style={{
+                                top: '-20px',
+                                right: '100px',
+                                opacity: 0.8
+                            }}
+                        />
+                        <Image
+                            src="/sparkle.png"
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="absolute w-[40px] h-[40px] -z-10"
+                            style={{
+                                bottom: '180px',
+                                right: '20px',
+                                opacity: 0.6
+                            }}
+                        />
+
+                        {/* Content Wrapper */}
+                        <div>
+                            {/* Main Heading */}
+                            <h1 className="font-bold text-[56px] leading-[65px] tracking-[-0.53px] mb-4">
+                                <span className="text-white">Your </span>
+                                <span className="text-[#CC9955]">Singapore</span>
+                                <span className="text-white"> Journey</span>
                             </h1>
 
-                            <p
-                                className="text-gray-400 max-w-[600px] pt-4 md:pt-2 mx-auto md:mx-0 text-sm md:text-[15.19px] leading-relaxed md:leading-[22.78px]"
-                            >
-                                Let our AI craft the perfect itinerary tailored just for you, or take the lead to browse and book from curated activities. Whatever your style, your Singapore Adventure starts here.
+                            {/* Subheading */}
+                            <p className="text-white text-[28px] mb-8 leading-relaxed">
+                                Now Smarter with Explore Singapore
                             </p>
 
-                            <div
-                                className="flex flex-col md:flex-row items-center pt-8 md:pt-6 gap-4 md:gap-[22.30px] w-full md:w-[700px]"
-                            >
-                                <button
-                                    className="text-white font-medium transition-colors hover:opacity-90 bg-[#CC9955] rounded-[22.30px] px-8 py-3 md:px-[29.74px] md:py-[14.87px] text-sm md:text-[14.87px] w-full md:w-[263.89px]"
-                                >
-                                    Perfect Trip, Instantly
-                                </button>
+                            {/* Description */}
+                            <p className="text-white text-[20px] mb-2">
+                                Meet your personal Singapore Guide{" "}
+                                <span className="text-[#CC9955]">Available 24/7</span>
+                            </p>
 
-                                <button
-                                    className="text-gray-300 font-medium transition-colors hover:text-white flex items-center justify-center gap-2 md:gap-[11.16px] rounded-[22.30px] px-8 py-3 md:px-[29.74px] md:py-[14.87px] text-sm md:text-[14.87px] w-full md:w-[344.05px]"
-                                >
-                                    Discover Activities Yourself
-                                    <span>→</span>
-                                </button>
-                            </div>
+                            {/* CTA Button */}
+                            <button
+                                className="bg-[#CC9955] text-white font-medium rounded-[25px] hover:opacity-90 transition-opacity mt-8 px-12 py-4 text-[18px]"
+                            >
+                                Start Chatting Now
+                            </button>
                         </div>
                     </div>
 
                     {/* Right Image */}
-                    <div className="flex justify-center items-center w-full -mt-8 md:mt-0">
+                    <div className="flex justify-center items-center relative">
                         <Image
                             src="/robot-hero.png"
                             alt="AI Travel Assistant"
-                            width={550}
-                            height={550}
-                            className="object-contain w-[345px] md:w-[550px] h-auto"
+                            width={600}
+                            height={600}
+                            className="object-contain w-full h-auto max-w-[600px]"
                             priority
                         />
                     </div>

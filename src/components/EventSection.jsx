@@ -48,6 +48,8 @@ export default function EventSection() {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
 
     const nextEvent = () => {
         setCurrentIndex((prev) => (prev + 1) % events.length);
@@ -57,9 +59,30 @@ export default function EventSection() {
         setCurrentIndex((prev) => (prev - 1 + events.length) % events.length);
     };
 
+    // Touch handlers for swipe
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStart - touchEnd > 75) {
+            // Swiped left - go to next
+            nextEvent();
+        }
+
+        if (touchStart - touchEnd < -75) {
+            // Swiped right - go to previous
+            prevEvent();
+        }
+    };
+
     return (
-        <section className="relative z-10 py-12 px-6 md:py-20 md:px-16">
-            <div className="max-w-[1400px] mx-auto">
+        <section className="relative z-10 py-12 md:py-20">
+            <div className="max-w-[1400px] mx-auto px-4 md:px-16">
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-8 md:mb-12 text-center md:text-left">
                     <div>
@@ -83,7 +106,12 @@ export default function EventSection() {
                 {/* Mobile Carousel */}
                 <div className="md:hidden">
                     {/* Cards Container with Peek Effect */}
-                    <div className="overflow-hidden -mx-6 px-6">
+                    <div
+                        className="overflow-hidden -mx-6 px-6"
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
                         <div
                             className="flex gap-4 transition-transform duration-300"
                             style={{

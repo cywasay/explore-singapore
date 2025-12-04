@@ -4,8 +4,8 @@ export default function Footer() {
     return (
         <footer className="relative z-10 mt-20 md:mt-32 border-t border-dashed border-gray-700">
             {/* Main Footer Content */}
-            <div className="px-6 py-12 md:px-16 md:py-16">
-                <div className="max-w-[1400px] mx-auto">
+            <div className="py-12 md:py-16">
+                <div className="max-w-[1400px] mx-auto px-4 md:px-16">
                     <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_auto] gap-8 md:gap-24">
                         {/* Left Column - Brand & Info */}
                         <div className="space-y-6 md:space-y-8">
@@ -204,8 +204,8 @@ export default function Footer() {
             </div>
 
             {/* Bottom Footer */}
-            <div className="border-t border-dashed border-gray-700 px-6 py-4 md:px-16 md:py-6">
-                <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <div className="border-t border-dashed border-gray-700 py-4 md:py-6">
+                <div className="max-w-[1400px] mx-auto px-4 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
                     <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm order-2 md:order-1">
                         <a href="#" className="hover:text-[#CC9955] transition-colors">
                             Privacy Policy
